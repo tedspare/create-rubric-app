@@ -1,0 +1,29 @@
+name: Update README with Screenshot
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  take-screenshot-and-update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Take screenshot
+        run: |
+          API_URL="https://shot.api.rubric.sh/?url=todo.rubriclabs.com&upload=true"
+          IMAGE_URL=$(curl -X GET $API_URL)
+          echo "::set-env name=IMAGE_URL::$IMAGE_URL"
+
+      - name: Update README with screenshot
+        run: |
+          sed -i "0,/<img /s|<img .*|<img src=\"$IMAGE_URL\">|" README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update README with screenshot"
+          git push
