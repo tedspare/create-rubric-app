@@ -14,7 +14,7 @@ This CLI stands up an AI Agent along with a UI and API to interface with it.
 
 Check out the demo at [todo.rubriclabs.com](https://todo.rubriclabs.com):
 
-<img src="https://s3nxvo8djqamvzft.public.blob.vercel-storage.com/todo.rubriclabs.com-5rlnhrufel9-IbOQ1AC8RHpdC5w12IRzy15Ao2V1YN.png">
+<img src="https://s3nxvo8djqamvzft.public.blob.vercel-storage.com/todo.rubriclabs.com-8h16viowqys-MzEp4BhfWYBnGFWgIqqDxpa1seCweI.png">
 
 ## Quickstart
 
