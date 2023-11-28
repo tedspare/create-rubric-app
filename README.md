@@ -14,7 +14,7 @@ This CLI stands up an AI Agent along with a UI and API to interface with it.
 
 Check out the demo at [todo.rubriclabs.com](https://todo.rubriclabs.com):
 
-<img width="1585" alt="Screenshot of smart to-do demo app" src="https://github.com/RubricLab/create-rubric-app/assets/36115192/ce4e4b69-a9a8-4e1a-a056-f815a75c587a">
+<img src="">
 
 ## Quickstart
 
