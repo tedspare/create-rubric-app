@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  take-screenshot-and-update-readme:
+  update-screenshot:
     runs-on: ubuntu-latest
     env:
       IMAGE_URL: ''
@@ -25,6 +25,9 @@ jobs:
           API_URL="https://shot.api.rubric.sh/?url=todo.rubriclabs.com&upload=true"
           IMAGE_URL=$(curl -X GET $API_URL)
 
+      - name: Wait for image URL
+        run: sleep 10
+        
       - name: Update README with screenshot
         run: |
           sed -i "0,/<img /s|<img .*|<img src=\"$IMAGE_URL\">|" README.md
