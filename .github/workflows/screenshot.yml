@@ -7,8 +7,8 @@ on:
 jobs:
   update-screenshot:
     runs-on: ubuntu-latest
-    env:
-      IMAGE_URL: ''
+    outputs:
+     image-url: ${{ steps.screenshot.outputs.image-url }}
 
     steps:
       - name: Checkout code
@@ -24,12 +24,17 @@ jobs:
         run: |
           API_URL="https://shot.api.rubric.sh/?url=todo.rubriclabs.com&upload=true"
           IMAGE_URL=$(curl -X GET $API_URL)
+          echo "image-url=$IMAGE_URL" >> $GITHUB_ENV
 
       - name: Wait for image URL
         run: sleep 10
+
+      - name: Set output for image URL
+        run: echo "image-url=${{ steps.screenshot.outputs.image-url }}" >> $GITHUB_ENV
         
       - name: Update README with screenshot
         run: |
+          IMAGE_URL=$(echo "${{ steps.screenshot.outputs.image-url }}")
           sed -i "0,/<img /s|<img .*|<img src=\"$IMAGE_URL\">|" README.md
 
       - name: Commit changes
