@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use Node.js 18
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -24,7 +24,6 @@ jobs:
         run: |
           API_URL="https://shot.api.rubric.sh/?url=todo.rubriclabs.com&upload=true"
           IMAGE_URL=$(curl -X GET $API_URL)
-          echo "::set-output name=imageUrl::$IMAGE_URL"
 
       - name: Update README with screenshot
         run: |
