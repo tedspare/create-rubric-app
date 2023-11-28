@@ -7,15 +7,24 @@ on:
 jobs:
   take-screenshot-and-update-readme:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_URL: ''
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
       - name: Take screenshot
+        id: screenshot
         run: |
           API_URL="https://shot.api.rubric.sh/?url=todo.rubriclabs.com&upload=true"
           IMAGE_URL=$(curl -X GET $API_URL)
-          echo "::set-env name=IMAGE_URL::$IMAGE_URL"
+          echo "::set-output name=imageUrl::$IMAGE_URL"
 
       - name: Update README with screenshot
         run: |
