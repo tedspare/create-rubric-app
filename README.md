@@ -1,5 +1,7 @@
 # Create Rubric App
 
+test
+
 The easiest way to start a full-stack AI project.
 
 [![NPM Version](https://img.shields.io/npm/v/create-rubric-app.svg)]()
