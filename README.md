@@ -15,7 +15,7 @@ This CLI stands up an AI Agent along with a UI and API to interface with it.
 
 Check out the demo at [todo.rubriclabs.com](https://todo.rubriclabs.com):
 
-<img src="https://s3nxvo8djqamvzft.public.blob.vercel-storage.com/todo.rubriclabs.com-8h16viowqys-MzEp4BhfWYBnGFWgIqqDxpa1seCweI.png">
+<img src="Pass { headers: { Authorization: 'Bearer shot_abc' } }">
 
 ## Quickstart
 
