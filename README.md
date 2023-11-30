@@ -1,6 +1,7 @@
 # Create Rubric App
 
 test
+ trigger build (should fail without API key)
 
 The easiest way to start a full-stack AI project.
 
